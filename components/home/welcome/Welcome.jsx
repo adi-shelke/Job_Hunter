@@ -13,7 +13,14 @@ import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
 import { useState } from "react";
 
-const jobTypes = ["Full-time", "Part-time", "Contractor"];
+const jobTypes = [
+  "Full-time",
+  "Part-time",
+  "Contractor",
+  "hello",
+  "new are",
+  "fuck",
+];
 
 const Welcome = () => {
   const [searchText, setsearchText] = useState("");
@@ -49,6 +56,7 @@ const Welcome = () => {
       </View>
       <View style={styles.tabsContainer}>
         <FlatList
+          showsHorizontalScrollIndicator={false}
           data={jobTypes}
           renderItem={({ item }) => (
             <TouchableOpacity
@@ -61,6 +69,9 @@ const Welcome = () => {
               <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
+          keyExtractor={(item) => item}
+          contentContainerStyle={{ columnGap: SIZES.small }}
+          horizontal
         />
       </View>
     </View>
