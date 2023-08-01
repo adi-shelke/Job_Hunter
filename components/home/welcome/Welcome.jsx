@@ -13,14 +13,7 @@ import styles from "./welcome.style";
 import { icons, SIZES } from "../../../constants";
 import { useState } from "react";
 
-const jobTypes = [
-  "Full-time",
-  "Part-time",
-  "Contractor",
-  "hello",
-  "new are",
-  "fuck",
-];
+const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 const Welcome = () => {
   const [searchText, setsearchText] = useState("");
