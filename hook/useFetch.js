@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+// import data from "../assets/test.json";
 const useFetch = (endpoint, query) => {
   const [data, setdata] = useState([]);
   const [isLoading, setisLoading] = useState(false);
@@ -29,12 +29,12 @@ const useFetch = (endpoint, query) => {
     }
   };
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
   const refetch = () => {
     setisLoading(true);
-    fetchData();
+    // fetchData();
   };
 
   return { data, isLoading, error, refetch };
