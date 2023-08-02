@@ -29,12 +29,12 @@ const useFetch = (endpoint, query) => {
     }
   };
   useEffect(() => {
-    // fetchData();
+    fetchData();
   }, []);
 
   const refetch = () => {
     setisLoading(true);
-    // fetchData();
+    fetchData();
   };
 
   return { data, isLoading, error, refetch };

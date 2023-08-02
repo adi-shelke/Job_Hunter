@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
-
 import styles from "./popularjobcard.style";
-
+import { checkiImageURL } from "../../../../utils";
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
   return (
     <TouchableOpacity
@@ -10,7 +9,11 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
     >
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
         <Image
-          source={{ uri: item.employer_logo }}
+          source={{
+            uri: checkiImageURL(item.employer_logo)
+              ? item.employer_logo
+              : "https://static.thenounproject.com/png/1551321-200.png",
+          }}
           resizeMode="contain"
           style={styles.logoImage}
         />
